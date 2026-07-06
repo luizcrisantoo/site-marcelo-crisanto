@@ -191,6 +191,13 @@ section { padding: var(--spacing-xl) 0; }
 .hero__credentials span { display: inline-flex; align-items: center; gap: 6px; }
 .hero__credentials strong { color: var(--text-color); }
 
+/* Linha de micro-confiança sob os CTAs */
+.reassure { display: flex; flex-wrap: wrap; gap: var(--spacing-sm) var(--spacing-md); font-size: var(--fs-small); color: var(--text-muted); margin: calc(var(--spacing-sm) * -1) 0 var(--spacing-lg); }
+.reassure span { display: inline-flex; align-items: center; gap: 5px; }
+.reassure span::before { content: '✓'; color: var(--primary-color); font-weight: 700; }
+.reassure--invert { justify-content: center; margin: var(--spacing-lg) 0 0; color: rgba(255, 255, 255, 0.9); }
+.reassure--invert span::before { color: #fff; }
+
 .hero__figure {
   position: relative;
   justify-self: center;
