@@ -26,3 +26,6 @@ Telefone, WhatsApp e link do Doctoralia ficam centralizados em `js/modules/api.j
 ## Pendências de deploy
 - Definir o domínio final (atualizar canonical, Open Graph, sitemap e JSON-LD).
 - Configurar `ErrorDocument 404 /404.html` no servidor (ou equivalente).
+
+## Autor
+Desenvolvido por **Luiz Crisanto** — https://github.com/luizcrisantoo
