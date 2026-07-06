@@ -1,0 +1,70 @@
+/* ==========================================================================
+   variables.css — Tokens de design (GSD PRO)
+   Tema: Clean médico verde/azul (natural, clínico, acolhedor)
+   Trocar o tema inteiro do site = alterar apenas este arquivo.
+   ========================================================================== */
+
+:root {
+  /* --- Cores de marca --- */
+  --primary-color: #2E7D6B;      /* verde-sálvia profundo */
+  --primary-dark: #1F5A4C;
+  --primary-light: #4CA391;
+  --secondary-color: #2C5A72;    /* azul sereno */
+  --secondary-light: #4A7E99;
+
+  /* --- Neutros / superfícies --- */
+  --bg-color: #FFFFFF;
+  --bg-alt: #F4F8F6;             /* verde muito suave para seções alternadas */
+  --bg-soft: #EAF2EF;
+  --surface: #FFFFFF;
+  --border-color: #E1E9E6;
+
+  /* --- Texto --- */
+  --text-color: #24322E;
+  --text-muted: #5B6B66;
+  --text-invert: #FFFFFF;
+
+  /* --- Acento / apoio --- */
+  --accent-color: #C9A24B;       /* dourado discreto p/ detalhes premium */
+  --whatsapp-color: #0E7A6B;     /* verde WhatsApp escurecido p/ contraste AA com texto branco */
+  --star-color: #B47E00;         /* âmbar profundo — passa 3:1 em fundo branco */
+
+  /* --- Fontes --- */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Poppins', 'Inter', sans-serif;
+
+  /* --- Escala tipográfica (fluida) --- */
+  --fs-hero: clamp(2rem, 5vw, 3.25rem);
+  --fs-h2: clamp(1.6rem, 3.5vw, 2.25rem);
+  --fs-h3: clamp(1.15rem, 2vw, 1.4rem);
+  --fs-body: clamp(1rem, 1.4vw, 1.075rem);
+  --fs-small: 0.875rem;
+
+  /* --- Espaçamentos --- */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  --spacing-2xl: 6rem;
+
+  /* --- Layout --- */
+  --max-width: 1180px;
+  --content-width: 720px;
+
+  /* --- Bordas e sombras --- */
+  --border-radius: 10px;
+  --border-radius-lg: 20px;
+  --border-radius-pill: 999px;
+  --shadow: 0 2px 8px rgba(36, 50, 46, 0.08);
+  --shadow-md: 0 8px 24px rgba(36, 50, 46, 0.10);
+  --shadow-lg: 0 16px 48px rgba(36, 50, 46, 0.14);
+
+  /* --- Transições --- */
+  --transition: 0.25s ease;
+  --transition-slow: 0.45s ease;
+
+  /* --- Camadas --- */
+  --z-header: 100;
+  --z-overlay: 200;
+}

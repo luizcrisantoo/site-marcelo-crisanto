@@ -1,0 +1,14 @@
+{
+  "name": "Dr. Marcelo Crisanto — Cirurgião da Mão",
+  "short_name": "Dr. Marcelo Crisanto",
+  "description": "Cirurgião da mão e ortopedista em Recife. Cirurgia minimamente invasiva e medicina integrativa.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2E7D6B",
+  "icons": [
+    { "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "favicon.ico", "sizes": "48x48" }
+  ]
+}

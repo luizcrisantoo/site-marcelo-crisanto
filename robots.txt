@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: trocar pelo domínio final
+Sitemap: https://www.drmarcelocrisanto.com.br/sitemap.xml

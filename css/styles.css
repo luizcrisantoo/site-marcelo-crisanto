@@ -1,0 +1,500 @@
+/* ==========================================================================
+   styles.css — GSD PRO (mobile-first)
+   Ordem: 1.Reset/Base  2.Header  3.Hero  4.Conteúdo  5.Footer  6.Utilitários  7.Media queries
+   ========================================================================== */
+
+@import url('variables.css');
+
+/* ============================= 1. RESET / BASE ============================= */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+* { margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--text-color);
+  background: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p { color: var(--text-muted); }
+
+a { color: var(--primary-color); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--primary-dark); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+ul { list-style: none; }
+
+section { padding: var(--spacing-xl) 0; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  background: var(--bg-soft);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-pill);
+  margin-bottom: var(--spacing-md);
+}
+
+.section-head { max-width: var(--content-width); margin-bottom: var(--spacing-lg); }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head p { margin-top: var(--spacing-sm); }
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--border-radius-pill);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+  text-align: center;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--primary-dark); color: #fff; box-shadow: var(--shadow); }
+.btn-primary:hover { background: #153F34; color: #fff; box-shadow: var(--shadow-md); }
+.btn-outline { background: transparent; color: var(--primary-color); border-color: var(--primary-color); }
+.btn-outline:hover { background: var(--primary-color); color: var(--text-invert); }
+.btn-whatsapp { background: var(--whatsapp-color); color: #fff; }
+.btn-whatsapp:hover { background: #0B6353; color: #fff; }
+
+/* ============================= 2. HEADER ============================= */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: var(--z-header);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+.header.scrolled { box-shadow: var(--shadow); border-color: var(--border-color); }
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.nav__brand { display: flex; flex-direction: column; line-height: 1.1; }
+.nav__brand strong { font-family: var(--font-heading); font-size: 1.05rem; color: var(--primary-dark); }
+.nav__brand span { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.03em; }
+
+.nav__menu {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(80%, 320px);
+  background: var(--bg-color);
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+}
+.nav__menu.open { transform: translateX(0); }
+.nav__menu a { color: var(--text-color); font-family: var(--font-heading); font-weight: 500; position: relative; white-space: nowrap; }
+.nav__menu a:hover { color: var(--primary-color); }
+/* Seção atual em destaque (Nielsen: visibilidade do status do sistema) */
+.nav__menu a.active { color: var(--primary-color); }
+.nav__menu a.active::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -6px;
+  height: 2px; background: var(--primary-color); border-radius: 2px;
+}
+.nav__menu .btn { margin-top: var(--spacing-sm); }
+/* Botão CTA do menu: texto sempre branco (vence .nav__menu a) */
+.nav__menu a.btn-primary,
+.nav__menu a.btn-primary:hover,
+.nav__menu a.btn-primary.active { color: #fff; }
+.nav__menu a.btn-primary.active::after { display: none; }
+
+.nav__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px; height: 40px;
+  background: none; border: none; cursor: pointer;
+  z-index: var(--z-overlay);
+}
+.nav__toggle span { display: block; height: 2px; width: 24px; background: var(--text-color); border-radius: 2px; transition: transform var(--transition), opacity var(--transition); }
+.nav__toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle.open span:nth-child(2) { opacity: 0; }
+.nav__toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav__overlay {
+  position: fixed; inset: 0;
+  background: rgba(36, 50, 46, 0.4);
+  opacity: 0; visibility: hidden;
+  transition: opacity var(--transition);
+  z-index: var(--z-header);
+}
+.nav__overlay.show { opacity: 1; visibility: visible; }
+
+/* ============================= 3. HERO ============================= */
+.hero {
+  padding-top: calc(68px + var(--spacing-xl));
+  background: linear-gradient(160deg, var(--bg-soft) 0%, var(--bg-color) 60%);
+  position: relative;
+  overflow: hidden;
+}
+.hero__grid { display: grid; gap: var(--spacing-xl); align-items: center; }
+.hero__rating {
+  display: inline-flex; align-items: center; gap: var(--spacing-sm);
+  font-size: var(--fs-small); color: var(--text-muted); margin-bottom: var(--spacing-md);
+}
+.hero__rating .stars { color: var(--star-color); letter-spacing: 2px; }
+.hero h1 { font-size: var(--fs-hero); margin-bottom: var(--spacing-md); }
+.hero h1 .highlight { color: var(--primary-color); }
+.hero__lead { font-size: 1.15rem; margin-bottom: var(--spacing-lg); max-width: 46ch; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--spacing-md); margin-bottom: var(--spacing-lg); }
+.hero__credentials { display: flex; flex-wrap: wrap; gap: var(--spacing-md); font-size: var(--fs-small); color: var(--text-muted); }
+.hero__credentials span { display: inline-flex; align-items: center; gap: 6px; }
+.hero__credentials strong { color: var(--text-color); }
+
+.hero__figure {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 380px;
+}
+.hero__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--border-radius-lg);
+  background: linear-gradient(160deg, var(--primary-light), var(--secondary-color));
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.85); font-family: var(--font-heading);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  object-position: center top;
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+/* Retrato recortado sobre bloco verde */
+.hero__portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--border-radius-lg);
+  background: radial-gradient(circle at 50% 28%, var(--primary-light), var(--primary-dark));
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.hero__portrait img {
+  width: 100%; height: 100%;
+  object-fit: contain; object-position: center bottom;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.18));
+}
+
+.hero__badge {
+  position: absolute; bottom: -18px; left: -12px;
+  background: var(--surface); border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md); padding: var(--spacing-md) var(--spacing-md);
+  display: flex; align-items: center; gap: var(--spacing-sm);
+  font-size: var(--fs-small); max-width: 230px;
+}
+.hero__badge .dot { width: 38px; height: 38px; flex: none; border-radius: 50%; background: var(--bg-soft); display: grid; place-items: center; }
+.hero__badge .dot img { display: block; width: 22px; height: 22px; }
+.hero__badge strong { display: block; color: var(--text-color); font-family: var(--font-heading); }
+
+/* Faixa de destaques */
+.highlights { background: var(--primary-dark); color: var(--text-invert); }
+.highlights .container { display: grid; gap: var(--spacing-lg); text-align: center; }
+.highlights .stat strong { display: block; font-family: var(--font-heading); font-size: 2rem; }
+.highlights .stat span { font-size: var(--fs-small); opacity: 0.85; }
+
+/* ============================= 4. CONTEÚDO ============================= */
+/* Sobre */
+.about { background: var(--bg-color); }
+.about__grid { display: grid; gap: var(--spacing-xl); align-items: start; }
+.about__text p { margin-bottom: var(--spacing-md); }
+.about__card {
+  background: var(--bg-alt); border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg); padding: var(--spacing-lg);
+}
+.about__card h3 { margin-bottom: var(--spacing-md); }
+.about__list li { display: flex; gap: var(--spacing-sm); padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--border-color); color: var(--text-muted); }
+.about__list li:last-child { border-bottom: none; }
+.about__list li::before { content: '✓'; color: var(--primary-color); font-weight: 700; }
+
+/* Medicina Integrativa — destaque */
+.integrative {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(76,163,145,0.10), transparent 45%),
+    var(--bg-alt);
+}
+.integrative__intro { max-width: var(--content-width); margin-bottom: var(--spacing-xl); }
+.integrative__pillars { display: grid; gap: var(--spacing-lg); }
+.pillar {
+  background: var(--surface); border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg); padding: var(--spacing-lg);
+  box-shadow: var(--shadow); transition: transform var(--transition), box-shadow var(--transition);
+}
+.pillar:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.pillar__icon { width: 52px; height: 52px; border-radius: 14px; background: var(--bg-soft); display: grid; place-items: center; margin-bottom: var(--spacing-md); }
+.pillar__icon img { display: block; width: 30px; height: 30px; }
+.pillar h3 { margin-bottom: var(--spacing-sm); }
+.integrative__note {
+  margin-top: var(--spacing-xl); padding: var(--spacing-lg);
+  border-left: 4px solid var(--primary-color); background: var(--bg-soft);
+  border-radius: var(--border-radius); font-size: var(--fs-small);
+}
+
+/* Serviços / Doenças */
+.services { background: var(--bg-color); }
+/* Flex para centralizar cards órfãos da última fileira */
+.cards-grid { display: flex; flex-wrap: wrap; gap: var(--spacing-md); justify-content: center; }
+.cards-grid > * { flex: 0 1 100%; }
+.service-card {
+  background: var(--surface); border: 1px solid var(--border-color);
+  border-radius: var(--border-radius); padding: var(--spacing-lg);
+  transition: border-color var(--transition), transform var(--transition);
+}
+.service-card:hover { border-color: var(--primary-light); transform: translateY(-3px); }
+.service-card h3 { font-size: 1.1rem; margin-bottom: var(--spacing-sm); }
+.service-card p { font-size: var(--fs-small); }
+
+.chips { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); margin-top: var(--spacing-lg); }
+.chip {
+  background: var(--bg-soft); color: var(--primary-dark);
+  padding: 0.4rem 0.9rem; border-radius: var(--border-radius-pill);
+  font-size: var(--fs-small); font-weight: 500;
+}
+
+/* Empatia / sintomas */
+.symptoms { background: var(--bg-alt); }
+.symptom-grid { display: grid; gap: var(--spacing-md); }
+.symptom {
+  background: var(--surface); border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-color);
+  border-radius: var(--border-radius); padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--text-color); display: flex; align-items: center; gap: var(--spacing-sm);
+}
+.symptom::before { content: '›'; color: var(--primary-color); font-weight: 700; font-size: 1.3rem; line-height: 1; }
+.symptoms__cta { margin-top: var(--spacing-xl); text-align: center; color: var(--text-color); font-size: 1.1rem; }
+.symptoms__cta .btn { display: inline-flex; margin-top: var(--spacing-md); }
+
+/* Como funciona / passos */
+.steps { background: var(--bg-color); }
+.steps__grid { display: grid; gap: var(--spacing-lg); counter-reset: none; }
+.step {
+  background: var(--bg-alt); border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg); padding: var(--spacing-lg);
+  position: relative;
+}
+.step__num {
+  display: inline-grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--primary-color); color: #fff;
+  font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem;
+  margin-bottom: var(--spacing-md);
+}
+.step h3 { margin-bottom: var(--spacing-sm); }
+.step p { font-size: var(--fs-small); }
+.steps__cta { margin-top: var(--spacing-xl); text-align: center; }
+
+/* Formação / timeline */
+.education { background: var(--bg-alt); }
+.timeline { display: grid; gap: var(--spacing-md); max-width: var(--content-width); }
+.timeline__item {
+  background: var(--surface); border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-color);
+  border-radius: var(--border-radius); padding: var(--spacing-md) var(--spacing-lg);
+}
+.timeline__item strong { display: block; color: var(--text-color); font-family: var(--font-heading); }
+.timeline__item span { font-size: var(--fs-small); }
+
+/* Consultórios */
+.locations { background: var(--bg-color); }
+.location-card {
+  background: var(--surface); border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg); padding: var(--spacing-lg);
+  box-shadow: var(--shadow);
+}
+.location-card h3 { font-size: 1.15rem; margin-bottom: var(--spacing-xs); }
+.location-card .addr { font-size: var(--fs-small); margin-bottom: var(--spacing-md); }
+.location-card .meta { display: flex; flex-direction: column; gap: 6px; font-size: var(--fs-small); }
+.location-card .meta a { display: inline-flex; align-items: center; gap: 6px; }
+.location-card .meta a img { flex: none; width: 18px; height: 18px; }
+.location-card__note { font-size: var(--fs-small); color: var(--text-muted); margin-top: var(--spacing-md); padding-top: var(--spacing-sm); border-top: 1px dashed var(--border-color); }
+
+/* Faixa de teleconsulta */
+.teleconsult {
+  margin-top: var(--spacing-lg);
+  background: var(--bg-soft); border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg); padding: var(--spacing-lg);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--spacing-md);
+}
+.teleconsult__text h3 { font-size: 1.15rem; margin-bottom: var(--spacing-xs); }
+.teleconsult__text p { font-size: var(--fs-small); }
+.teleconsult__actions { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); }
+
+/* Opiniões */
+.reviews { background: var(--bg-alt); }
+.reviews__score { display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-lg); }
+.reviews__score .num { font-family: var(--font-heading); font-size: 3rem; color: var(--primary-color); line-height: 1; }
+.reviews__score .stars { color: var(--star-color); font-size: 1.2rem; letter-spacing: 2px; }
+.review-card {
+  background: var(--surface); border: 1px solid var(--border-color);
+  border-radius: var(--border-radius); padding: var(--spacing-lg);
+}
+.review-card .stars { color: var(--star-color); letter-spacing: 2px; margin-bottom: var(--spacing-sm); }
+.review-card blockquote { color: var(--text-color); font-style: italic; margin-bottom: var(--spacing-sm); }
+.review-card cite { font-size: var(--fs-small); color: var(--text-muted); font-style: normal; }
+
+/* FAQ */
+.faq { background: var(--bg-color); }
+.faq__list { max-width: var(--content-width); margin: 0 auto; }
+.faq__item { border-bottom: 1px solid var(--border-color); }
+.faq__q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: var(--spacing-md);
+  padding: var(--spacing-md) 0; font-family: var(--font-heading); font-weight: 500;
+  font-size: 1.05rem; color: var(--text-color); text-align: left;
+}
+.faq__q .icon { flex: none; transition: transform var(--transition); color: var(--primary-color); font-size: 1.4rem; }
+.faq__item.open .faq__q .icon { transform: rotate(45deg); }
+.faq__a { max-height: 0; overflow: hidden; transition: max-height var(--transition-slow); }
+.faq__a p { padding-bottom: var(--spacing-md); }
+
+/* CTA / Contato */
+.cta {
+  background: linear-gradient(160deg, var(--primary-dark), var(--secondary-color));
+  color: var(--text-invert);
+}
+.cta .container { text-align: center; max-width: var(--content-width); }
+.cta h2 { color: var(--text-invert); }
+.cta p { color: rgba(255,255,255,0.85); margin: var(--spacing-md) 0 var(--spacing-lg); }
+.cta__actions { display: flex; flex-wrap: wrap; gap: var(--spacing-md); justify-content: center; }
+.cta__actions .btn-outline { color: #fff; border-color: rgba(255,255,255,0.7); }
+.cta__actions .btn-outline:hover { background: #fff; color: var(--primary-dark); }
+
+/* ============================= 5. FOOTER ============================= */
+.footer { background: #16221E; color: rgba(255,255,255,0.75); padding: var(--spacing-xl) 0 var(--spacing-lg); }
+.footer__grid { display: grid; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg); }
+.footer h4 { color: #fff; margin-bottom: var(--spacing-md); font-size: 1rem; }
+.footer a { color: rgba(255,255,255,0.75); }
+.footer a:hover { color: #fff; }
+.footer__links li { margin-bottom: var(--spacing-sm); font-size: var(--fs-small); }
+.footer__brand strong { color: #fff; font-family: var(--font-heading); font-size: 1.1rem; }
+.footer__brand p { color: rgba(255,255,255,0.6); font-size: var(--fs-small); margin-top: var(--spacing-sm); }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: var(--spacing-lg); font-size: 0.8rem; color: rgba(255,255,255,0.55); text-align: center; }
+.footer__disclaimer { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: var(--spacing-sm); max-width: 640px; margin-inline: auto; }
+.footer__credits { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: var(--spacing-sm); }
+.footer__credits a { color: rgba(255,255,255,0.82); text-decoration: underline; }
+
+/* Botão flutuante WhatsApp */
+.wa-float {
+  position: fixed; bottom: 22px; right: 22px; z-index: var(--z-header);
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--whatsapp-color); color: #fff;
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-lg); transition: transform var(--transition);
+}
+.wa-float:hover { transform: scale(1.08); color: #fff; }
+.wa-float svg { width: 30px; height: 30px; }
+
+/* Botão voltar ao topo */
+.to-top {
+  position: fixed; bottom: 88px; right: 24px; z-index: var(--z-header);
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--surface); color: var(--primary-color);
+  border: 1px solid var(--border-color); cursor: pointer;
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-md); transition: transform var(--transition), background var(--transition);
+}
+.to-top[hidden] { display: none; }
+.to-top:hover { transform: translateY(-3px); background: var(--bg-soft); }
+.to-top svg { width: 22px; height: 22px; }
+
+/* ============================= 6. UTILITÁRIOS ============================= */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--primary-color); color: #fff; padding: var(--spacing-sm) var(--spacing-md); z-index: var(--z-overlay); }
+.skip-link:focus { left: var(--spacing-sm); }
+:focus-visible { outline: 3px solid var(--secondary-light); outline-offset: 2px; }
+
+/* ============================= 7. MEDIA QUERIES (min-width) ============================= */
+@media (min-width: 600px) {
+  .highlights .container { grid-template-columns: repeat(4, 1fr); }
+  .cards-grid > * { flex-basis: calc((100% - var(--spacing-md)) / 2); }
+  .integrative__pillars { grid-template-columns: repeat(2, 1fr); }
+  .symptom-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+
+@media (min-width: 900px) {
+  .hero__grid { grid-template-columns: 1.1fr 0.9fr; }
+  .about__grid { grid-template-columns: 1.4fr 1fr; }
+  .integrative__pillars { grid-template-columns: repeat(3, 1fr); }
+  .cards-grid > * { flex-basis: calc((100% - 2 * var(--spacing-md)) / 3); }
+  .symptom-grid { grid-template-columns: repeat(3, 1fr); }
+  .steps__grid { grid-template-columns: repeat(3, 1fr); }
+  .locations__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+  .reviews__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+}
+
+@media (max-width: 899px) {
+  .locations__grid { display: grid; gap: var(--spacing-lg); }
+  .reviews__grid { display: grid; gap: var(--spacing-lg); }
+}
+
+/* Menu horizontal só quando há largura suficiente (evita quebra de linha) */
+@media (min-width: 1100px) {
+  .nav__toggle { display: none; }
+  .nav__menu {
+    position: static; inset: auto; width: auto;
+    flex-direction: row; align-items: center; padding: 0;
+    transform: none; box-shadow: none; background: none; gap: 1.35rem;
+  }
+  .nav__menu a { font-size: 0.95rem; }
+  .nav__menu .btn { margin-top: 0; padding: 0.7rem 1.3rem; }
+  .nav__overlay { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}

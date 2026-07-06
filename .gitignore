@@ -1,0 +1,16 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Editores / IDEs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Dependências / temporários
+node_modules/
+*.log
+_bundle.*

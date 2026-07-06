@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+    Headers de segurança (configurar no servidor):
+    Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'
+    X-Frame-Options: DENY
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: strict-origin-when-cross-origin
+  -->
+
+  <title>Cirurgião da Mão em Recife | Dr. Marcelo Crisanto — Ortopedista</title>
+  <meta name="description" content="Dr. Marcelo Crisanto, cirurgião da mão e ortopedista em Recife (CRM-PE 11472). Cirurgia minimamente invasiva e medicina integrativa para tratar dor, formigamento e lesões da mão. Agende sua consulta.">
+  <meta name="author" content="Dr. Marcelo Crisanto">
+  <meta name="keywords" content="cirurgião da mão Recife, ortopedista Recife, síndrome do túnel do carpo, dedo em gatilho, medicina integrativa, tendinite, artrose da mão">
+  <meta name="theme-color" content="#2E7D6B">
+  <meta name="robots" content="index, follow">
+
+  <!-- SEO local (Recife/PE) -->
+  <meta name="geo.region" content="BR-PE">
+  <meta name="geo.placename" content="Recife">
+  <meta name="geo.position" content="-8.126;-34.897">
+  <meta name="ICBM" content="-8.126, -34.897">
+
+  <!-- TODO: trocar pelo domínio final do site em canonical, og:url e no sitemap/JSON-LD -->
+  <link rel="canonical" href="https://www.drmarcelocrisanto.com.br/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dr. Marcelo Crisanto">
+  <meta property="og:title" content="Cirurgião da Mão em Recife | Dr. Marcelo Crisanto">
+  <meta property="og:description" content="Cirurgia da mão minimamente invasiva aliada à medicina integrativa. Cuidado completo e humanizado em Recife.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://www.drmarcelocrisanto.com.br/">
+  <meta property="og:image" content="https://www.drmarcelocrisanto.com.br/assets/images/og-marcelo-crisanto.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dr. Marcelo Crisanto, cirurgião da mão em Recife">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cirurgião da Mão em Recife | Dr. Marcelo Crisanto">
+  <meta name="twitter:description" content="Cirurgia da mão minimamente invasiva e medicina integrativa. Cuidado humanizado em Recife.">
+  <meta name="twitter:image" content="https://www.drmarcelocrisanto.com.br/assets/images/og-marcelo-crisanto.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Fontes auto-hospedadas (sem terceiros; compatível com CSP self) -->
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS minificado (bundle: variables + fonts + styles). Fontes editáveis em css/ -->
+  <link rel="stylesheet" href="css/styles.min.css">
+
+  <!-- Dados estruturados (SEO — Physician + avaliações) -->
+  <!-- TODO: confirmar telefone e domínio reais -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Marcelo Crisanto",
+    "medicalSpecialty": ["Orthopedic", "HandSurgery"],
+    "description": "Cirurgião da mão e ortopedista-traumatologista em Recife, com abordagem integrativa e humanizada. Tratamento de síndrome do túnel do carpo, dedo em gatilho, tendinites, artrose e lesões da mão.",
+    "image": "https://www.drmarcelocrisanto.com.br/assets/images/dr-marcelo.jpg",
+    "url": "https://www.drmarcelocrisanto.com.br/",
+    "telephone": "+55-81-3087-9595",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenida República do Líbano, 251, Torre 3 - 1º andar, Pina",
+      "addressLocality": "Recife",
+      "addressRegion": "PE",
+      "postalCode": "51110-160",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -8.126,
+      "longitude": -34.897
+    },
+    "areaServed": "Recife e Região Metropolitana",
+    "availableService": [
+      { "@type": "MedicalProcedure", "name": "Cirurgia da síndrome do túnel do carpo" },
+      { "@type": "MedicalProcedure", "name": "Tratamento de dedo em gatilho" },
+      { "@type": "MedicalProcedure", "name": "Cirurgia da contratura de Dupuytren" },
+      { "@type": "MedicalProcedure", "name": "Cirurgia artroscópica do punho" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "93",
+      "bestRating": "5"
+    },
+    "sameAs": [
+      "https://www.doctoralia.com.br/marcelo-crisanto/cirurgiao-da-mao-ortopedista-traumatologista/recife"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="nav__brand" href="#top" aria-label="Dr. Marcelo Crisanto — início">
+        <strong>Dr. Marcelo Crisanto</strong>
+        <span>Cirurgia da Mão · Ortopedia</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#integrativa">Integrativa</a></li>
+        <li><a href="#servicos">Tratamentos</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#consultorios">Consultórios</a></li>
+        <li><a href="#opinioes">Opiniões</a></li>
+        <li><a class="btn btn-primary" data-doctoralia href="#agendar">Agendar consulta</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="nav__overlay" id="navOverlay"></div>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="inicio" aria-label="Apresentação">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <p class="hero__rating">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span>93 opiniões de pacientes no Doctoralia</span>
+          </p>
+          <h1>Cuidar da sua mão com <span class="highlight">ciência e um olhar integrativo</span></h1>
+          <p class="hero__lead">
+            Cirurgia da mão minimamente invasiva unida a uma abordagem que enxerga o
+            paciente por inteiro — corpo, hábitos e recuperação. Menos cicatriz,
+            retorno mais rápido e um cuidado verdadeiramente humano.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn-whatsapp" data-wa href="#agendar">
+              Falar no WhatsApp
+            </a>
+            <a class="btn btn-outline" data-doctoralia href="#agendar">Agendar pelo Doctoralia</a>
+          </div>
+          <div class="hero__credentials">
+            <span><strong>CRM-PE</strong> 11472</span>
+            <span><strong>RQE</strong> 1914 · 7442</span>
+            <span><strong>+10 anos</strong> no SOS Mão Recife</span>
+          </div>
+        </div>
+
+        <figure class="hero__figure reveal">
+          <!-- Foto recortada do Dr. Marcelo sobre fundo verde -->
+          <div class="hero__portrait">
+            <picture>
+              <source srcset="assets/images/dr-marcelo-cutout.webp" type="image/webp">
+              <img src="assets/images/dr-marcelo-cutout.png" width="400" height="533"
+                   alt="Retrato do Dr. Marcelo Crisanto, cirurgião da mão, de jaleco branco">
+            </picture>
+          </div>
+          <figcaption class="hero__badge">
+            <span class="dot"><img src="assets/icons/stetoscopio.png" alt="" width="22" height="22" loading="lazy"></span>
+            <span><strong>Cirurgia minimamente invasiva</strong> aprendida em Paris e Estrasburgo</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================ HIGHLIGHTS ============================ -->
+    <section class="highlights" aria-label="Números e destaques">
+      <div class="container">
+        <div class="stat reveal"><strong>+10</strong><span>anos de experiência</span></div>
+        <div class="stat reveal"><strong>3</strong><span>consultórios em Recife</span></div>
+        <div class="stat reveal"><strong>93</strong><span>opiniões de pacientes</span></div>
+        <div class="stat reveal"><strong>27</strong><span>formações e titulações</span></div>
+      </div>
+    </section>
+
+    <!-- ============================ EMPATIA / SINTOMAS ============================ -->
+    <section class="symptoms" id="sintomas" aria-label="Sintomas e sinais de alerta">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Você reconhece isso?</span>
+          <h2>Sua mão está te limitando no dia a dia?</h2>
+          <p>Dor, formigamento ou perda de força não são “coisa da idade” — têm causa e tratamento. Quanto antes avaliados, mais simples costuma ser resolver, muitas vezes sem cirurgia.</p>
+        </div>
+
+        <ul class="symptom-grid">
+          <li class="symptom reveal">Dor ou queimação no punho e na mão</li>
+          <li class="symptom reveal">Formigamento nos dedos, que piora à noite</li>
+          <li class="symptom reveal">Perda de força para segurar objetos</li>
+          <li class="symptom reveal">Dedo que trava, estala ou “dá um clique”</li>
+          <li class="symptom reveal">Caroço ou cisto no punho</li>
+          <li class="symptom reveal">Dificuldade para trabalhar, dirigir ou dormir</li>
+        </ul>
+
+        <p class="symptoms__cta reveal">
+          Se você se identificou com algum desses sinais, uma avaliação pode esclarecer a causa.
+          <a class="btn btn-primary" data-wa href="#agendar">Quero agendar uma avaliação</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ SOBRE ============================ -->
+    <section class="about" id="sobre" aria-label="Sobre o especialista">
+      <div class="container about__grid">
+        <div class="about__text reveal">
+          <span class="section-tag">Sobre o especialista</span>
+          <h2>Conhecimento científico e um tratamento humanizado</h2>
+          <p>
+            A mão é a parte do corpo que mais sofre traumatismos — é o nosso principal
+            instrumento de trabalho. A cirurgia da mão se dedica ao diagnóstico e
+            tratamento das doenças desse segmento delicado e complexo, e o Dr. Marcelo
+            Crisanto reúne ampla experiência para tratá-las aliando técnica de ponta a
+            um cuidado próximo do paciente.
+          </p>
+          <p>
+            Formado em Medicina e em Ortopedia e Traumatologia pela <strong>UFPE</strong>,
+            especializou-se em cirurgia da mão e estagiou no <strong>Instituto Francês de
+            Cirurgia da Mão, em Paris</strong>, aprendendo com grandes mestres. Dominou a
+            artroscopia em Estrasburgo (França), São Paulo e Recife, o que lhe permite
+            realizar cirurgias minimamente invasivas — com menores cicatrizes e
+            recuperação mais rápida.
+          </p>
+          <p>
+            Há mais de 10 anos atua no <strong>SOS Mão Recife</strong>, onde a troca de
+            experiências entre especialistas faz a diferença nos casos mais complexos.
+            Está sempre se atualizando em cursos e congressos no Brasil e no mundo.
+          </p>
+        </div>
+        <aside class="about__card reveal">
+          <h3>Titulações & Sociedades</h3>
+          <ul class="about__list">
+            <li>Ortopedia e Traumatologia — UFPE</li>
+            <li>Especialização em Cirurgia da Mão</li>
+            <li>Instituto Francês de Cirurgia da Mão (Paris)</li>
+            <li>Sociedade Brasileira de Cirurgia da Mão</li>
+            <li>Sociedade Brasileira de Ortopedia e Traumatologia</li>
+            <li>American Academy of Orthopaedic Surgeons</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== MEDICINA INTEGRATIVA (DESTAQUE) ==================== -->
+    <section class="integrative" id="integrativa" aria-label="Medicina integrativa">
+      <div class="container">
+        <div class="section-head integrative__intro reveal">
+          <span class="section-tag">Diferencial</span>
+          <h2>Medicina integrativa: tratar a pessoa, não apenas a lesão</h2>
+          <p>
+            A cirurgia resolve o problema estrutural — mas a recuperação plena envolve
+            muito mais. A abordagem integrativa combina a melhor evidência científica da
+            ortopedia com o cuidado do estilo de vida, da dor, do sono e da mente, para
+            que o resultado dure e o paciente volte a viver bem.
+          </p>
+        </div>
+
+        <div class="integrative__pillars">
+          <article class="pillar reveal">
+            <div class="pillar__icon"><img src="assets/icons/corpo.png" alt="" width="30" height="30" loading="lazy"></div>
+            <h3>Visão do corpo inteiro</h3>
+            <p>Avaliação que considera postura, hábitos e rotina de trabalho — não só o ponto da dor — para entender a real origem do problema.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar__icon"><img src="assets/icons/mente.png" alt="" width="30" height="30" loading="lazy"></div>
+            <h3>Manejo da dor e do estresse</h3>
+            <p>Estratégias que unem tratamento clínico, controle da dor e cuidado com o bem-estar, reduzindo a necessidade de intervenções desnecessárias.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar__icon"><img src="assets/icons/cirurgia.png" alt="" width="30" height="30" loading="lazy"></div>
+            <h3>Cirurgia só quando necessária</h3>
+            <p>Quando a cirurgia é indicada, técnicas minimamente invasivas garantem menos trauma, menores cicatrizes e retorno mais rápido às atividades.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar__icon"><img src="assets/icons/reabilitacao.png" alt="" width="30" height="30" loading="lazy"></div>
+            <h3>Reabilitação ativa</h3>
+            <p>Plano de recuperação com orientação de movimento, fortalecimento e acompanhamento próximo até a alta — o cuidado não termina na sala de cirurgia.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar__icon"><img src="assets/icons/habitos.png" alt="" width="30" height="30" loading="lazy"></div>
+            <h3>Hábitos que curam</h3>
+            <p>Orientações sobre sono, alimentação e atividade física que favorecem a cicatrização e a saúde das articulações a longo prazo.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="pillar__icon"><img src="assets/icons/decisao.png" alt="" width="30" height="30" loading="lazy"></div>
+            <h3>Decisão compartilhada</h3>
+            <p>Tempo para ouvir, explicar cada opção com clareza e decidir junto com o paciente o melhor caminho para o seu caso.</p>
+          </article>
+        </div>
+
+        <p class="integrative__note reveal">
+          A abordagem integrativa complementa — e nunca substitui — o tratamento médico
+          convencional. Todas as condutas seguem a melhor evidência científica disponível
+          e são individualizadas para cada paciente.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ SERVIÇOS / DOENÇAS ============================ -->
+    <section class="services" id="servicos" aria-label="Tratamentos e condições">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Tratamentos</span>
+          <h2>Principais procedimentos e condições tratadas</h2>
+        </div>
+
+        <div class="cards-grid">
+          <article class="service-card reveal">
+            <h3>Síndrome do túnel do carpo</h3>
+            <p>Diagnóstico preciso e tratamento cirúrgico com técnica minimamente invasiva quando indicado.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Dedo em gatilho</h3>
+            <p>Tratamento clínico ou cirúrgico da tenossinovite estenosante, com recuperação rápida.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Contratura de Dupuytren</h3>
+            <p>Correção da retração da fáscia palmar para devolver a mobilidade dos dedos.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Fraturas da mão e punho</h3>
+            <p>Tratamento cirúrgico de fraturas das falanges e do punho, com fixação e reabilitação.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Lesões de tendões</h3>
+            <p>Reparo de tendões flexores e extensores, incluindo dedo em martelo e em garra.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Cisto sinovial</h3>
+            <p>Avaliação por imagem e conduta adequada para cistos no punho e articulações.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Artrose da mão e punho</h3>
+            <p>Manejo integrativo da dor e da função, com opções conservadoras e cirúrgicas.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Cirurgia artroscópica</h3>
+            <p>Procedimentos minimamente invasivos do punho, com menor trauma e recuperação acelerada.</p>
+          </article>
+        </div>
+
+        <div class="chips reveal" aria-label="Outras condições tratadas">
+          <span class="chip">Traumatismos da mão</span>
+          <span class="chip">Traumatismos dos tendões</span>
+          <span class="chip">Compressões nervosas</span>
+          <span class="chip">Rizartrose</span>
+          <span class="chip">Tendinites</span>
+          <span class="chip">Deformidades dos dedos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FORMAÇÃO ============================ -->
+    <section class="education" id="formacao" aria-label="Formação e experiência">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Trajetória</span>
+          <h2>Formação e experiência</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline__item reveal">
+            <strong>Medicina · Ortopedia e Traumatologia</strong>
+            <span>Universidade Federal de Pernambuco (UFPE)</span>
+          </div>
+          <div class="timeline__item reveal">
+            <strong>Especialização em Cirurgia da Mão</strong>
+            <span>Formação avançada no tratamento do complexo mão-punho</span>
+          </div>
+          <div class="timeline__item reveal">
+            <strong>Estágio no Instituto Francês de Cirurgia da Mão</strong>
+            <span>Paris, França — aprendizado com grandes mestres da especialidade</span>
+          </div>
+          <div class="timeline__item reveal">
+            <strong>Formação em Artroscopia</strong>
+            <span>Estrasburgo (França), São Paulo e Recife — cirurgia minimamente invasiva</span>
+          </div>
+          <div class="timeline__item reveal">
+            <strong>+10 anos no SOS Mão Recife</strong>
+            <span>Atuação em equipe multidisciplinar de especialistas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONSULTÓRIOS ============================ -->
+    <section class="locations" id="consultorios" aria-label="Consultórios e telemedicina">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Onde atende</span>
+          <h2>Consultórios e telemedicina</h2>
+          <p>Atendimento presencial em Recife e consulta por vídeo para todo o Brasil.</p>
+        </div>
+
+        <div class="locations__grid">
+          <article class="location-card reveal">
+            <h3>SOS Mão e Ortopedia — Rio Mar</h3>
+            <p class="addr">Av. República do Líbano, 251 — Torre 3, 1º andar · Pina, Recife/PE · 51110-160</p>
+            <div class="meta">
+              <a data-tel href="#"><img src="assets/icons/telefone.png" alt="" width="18" height="18" loading="lazy">(81) 3087-9595</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Rep%C3%BAblica+do+L%C3%ADbano+251+Pina+Recife" target="_blank" rel="noopener noreferrer"><img src="assets/icons/local.png" alt="" width="18" height="18" loading="lazy">Ver no mapa</a>
+              <a data-doctoralia href="#"><img src="assets/icons/calendario.png" alt="" width="18" height="18" loading="lazy">Agendar online</a>
+            </div>
+          </article>
+
+          <article class="location-card reveal">
+            <h3>SOS Mão e Ortopedia — Boa Viagem</h3>
+            <p class="addr">Av. Domingos Ferreira, 2265 · Boa Viagem, Recife/PE · 51020-031</p>
+            <div class="meta">
+              <a data-tel href="#"><img src="assets/icons/telefone.png" alt="" width="18" height="18" loading="lazy">(81) 3087-9595</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Domingos+Ferreira+2265+Boa+Viagem+Recife" target="_blank" rel="noopener noreferrer"><img src="assets/icons/local.png" alt="" width="18" height="18" loading="lazy">Ver no mapa</a>
+              <a data-doctoralia href="#"><img src="assets/icons/calendario.png" alt="" width="18" height="18" loading="lazy">Agendar online</a>
+            </div>
+          </article>
+
+          <article class="location-card reveal">
+            <h3>SOS Mão — Casa Forte</h3>
+            <p class="addr">Rua 17 de Agosto, 209 · Casa Forte, Recife/PE · 52060-540</p>
+            <div class="meta">
+              <a data-tel href="#"><img src="assets/icons/telefone.png" alt="" width="18" height="18" loading="lazy">(81) 3087-9595</a>
+              <a href="https://wa.me/5581983084634?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Marcelo%20Crisanto%20(unidade%20Casa%20Forte)." target="_blank" rel="noopener noreferrer"><img src="assets/icons/chat.png" alt="" width="18" height="18" loading="lazy">WhatsApp (81) 98308-4634</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Rua+17+de+Agosto+209+Casa+Forte+Recife" target="_blank" rel="noopener noreferrer"><img src="assets/icons/local.png" alt="" width="18" height="18" loading="lazy">Ver no mapa</a>
+            </div>
+            <p class="location-card__note">Agendamento por telefone ou WhatsApp (sem agenda online neste endereço). Pagamento particular: dinheiro ou transferência.</p>
+          </article>
+        </div>
+
+        <div class="teleconsult reveal">
+          <div class="teleconsult__text">
+            <h3>Teleconsulta — consulta por vídeo</h3>
+            <p>Atendimento por telemedicina para todo o Brasil. Agendamentos com a secretária Marília.</p>
+          </div>
+          <div class="teleconsult__actions">
+            <a class="btn btn-whatsapp" data-wa href="#">Agendar por WhatsApp</a>
+            <a class="btn btn-outline" data-doctoralia href="#">Ver datas no Doctoralia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ OPINIÕES ============================ -->
+    <section class="reviews" id="opinioes" aria-label="Opiniões de pacientes">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Opiniões</span>
+          <h2>O que dizem os pacientes</h2>
+        </div>
+
+        <div class="reviews__score reveal">
+          <span class="num">5,0</span>
+          <div>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <p>Baseado em 93 opiniões verificadas no Doctoralia</p>
+          </div>
+        </div>
+
+        <div class="reviews__grid">
+          <article class="review-card reveal">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <blockquote>Médico atencioso, explica cada detalhe do tratamento com calma e clareza. Me senti seguro em todo o processo.</blockquote>
+            <cite>— Paciente verificado</cite>
+          </article>
+          <article class="review-card reveal">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <blockquote>Profissional excelente. A cirurgia foi tranquila e a recuperação muito mais rápida do que eu esperava.</blockquote>
+            <cite>— Paciente verificado</cite>
+          </article>
+          <article class="review-card reveal">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <blockquote>Atendimento humano de verdade. Cuidou não só da minha mão, mas de me orientar em tudo. Recomendo muito.</blockquote>
+            <cite>— Paciente verificado</cite>
+          </article>
+        </div>
+
+        <p class="reveal" style="margin-top: var(--spacing-lg);">
+          <a class="btn btn-outline" data-doctoralia href="#">Ler todas as opiniões no Doctoralia</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ COMO FUNCIONA ============================ -->
+    <section class="steps" id="como-funciona" aria-label="Como funciona o atendimento">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="section-tag">Simples e sem burocracia</span>
+          <h2>Como funciona o atendimento</h2>
+          <p>Do primeiro contato ao seu retorno às atividades, com você no centro de cada decisão.</p>
+        </div>
+
+        <ol class="steps__grid">
+          <li class="step reveal">
+            <span class="step__num">1</span>
+            <h3>Agende sua consulta</h3>
+            <p>Escolha o canal mais fácil para você: WhatsApp, telefone com a secretária ou o Doctoralia. Presencial em Recife ou por vídeo.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">2</span>
+            <h3>Avaliação completa e integrativa</h3>
+            <p>Uma escuta atenta e um exame cuidadoso para entender a causa — não apenas o sintoma — considerando sua rotina e seus hábitos.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">3</span>
+            <h3>Plano de tratamento individualizado</h3>
+            <p>Do cuidado conservador à cirurgia minimamente invasiva, quando necessária, com acompanhamento próximo até a sua recuperação.</p>
+          </li>
+        </ol>
+
+        <p class="steps__cta reveal">
+          <a class="btn btn-primary" data-wa href="#agendar">Dar o primeiro passo</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ FAQ ============================ -->
+    <section class="faq" id="faq" aria-label="Perguntas frequentes">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="section-tag">Dúvidas frequentes</span>
+          <h2>Perguntas frequentes</h2>
+        </div>
+
+        <div class="faq__list">
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">Quais são as especialidades do Dr. Marcelo Crisanto?<span class="icon" aria-hidden="true">+</span></button>
+            <div class="faq__a"><p>Cirurgião da mão e ortopedista-traumatologista, com registro CRM-PE 11472 e títulos de especialista (RQE 1914 e 7442).</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">O que é a abordagem integrativa?<span class="icon" aria-hidden="true">+</span></button>
+            <div class="faq__a"><p>É um cuidado que une a técnica cirúrgica de ponta ao olhar para o paciente como um todo — dor, hábitos, sono e reabilitação — sempre baseado em evidência científica e sem substituir o tratamento médico convencional.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">A consulta pode ser por vídeo?<span class="icon" aria-hidden="true">+</span></button>
+            <div class="faq__a"><p>Sim. Há atendimento por telemedicina. Os agendamentos de teleconsulta são feitos com a secretária Marília — fale pelo WhatsApp ou telefone.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">Como faço para agendar uma consulta?<span class="icon" aria-hidden="true">+</span></button>
+            <div class="faq__a"><p>Você pode agendar pelo WhatsApp, por telefone com a secretária ou diretamente pelo perfil no Doctoralia. Use os botões de agendamento nesta página.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CTA / AGENDAR ============================ -->
+    <section class="cta" id="agendar" aria-label="Agendar consulta">
+      <div class="container">
+        <h2>Pronto para cuidar da sua mão?</h2>
+        <p>Agende sua consulta presencial em Recife ou por telemedicina. Estamos à disposição para ajudar.</p>
+        <div class="cta__actions">
+          <a class="btn btn-whatsapp" data-wa href="#">Falar no WhatsApp</a>
+          <a class="btn btn-outline" data-tel href="#">Ligar para a secretária</a>
+          <a class="btn btn-outline" data-doctoralia href="#">Agendar pelo Doctoralia</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <strong>Dr. Marcelo Crisanto</strong>
+          <p>Cirurgião da mão e ortopedista-traumatologista em Recife. Cuidado integrativo, técnico e humano.</p>
+          <p>CRM-PE 11472 · RQE 1914 / 7442</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul class="footer__links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#integrativa">Medicina Integrativa</a></li>
+            <li><a href="#servicos">Tratamentos</a></li>
+            <li><a href="#consultorios">Consultórios</a></li>
+            <li><a href="#opinioes">Opiniões</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul class="footer__links">
+            <li><a data-wa href="#">WhatsApp</a></li>
+            <li><a data-tel href="#">Telefone da secretária</a></li>
+            <li><a data-doctoralia href="#">Agendar no Doctoralia</a></li>
+            <li>Av. República do Líbano, 251 — Pina, Recife/PE</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="year">2026</span> Dr. Marcelo Crisanto. Todos os direitos reservados.</p>
+        <p class="footer__disclaimer">
+          As informações deste site têm caráter informativo e não substituem a consulta,
+          o diagnóstico ou o tratamento médico presencial. Em caso de emergência, procure
+          atendimento imediato.
+        </p>
+        <p class="footer__credits">Ícones por <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Voltar ao topo (aparece ao rolar) — controlabilidade -->
+  <button class="to-top" id="toTop" aria-label="Voltar ao topo da página" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 19V6M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- WhatsApp flutuante -->
+  <a class="wa-float" data-wa href="#" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.5-.7-2.5-1.3-3.5-3-.3-.5.3-.4.8-1.4.1-.2 0-.4 0-.5s-.6-1.5-.9-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.7.7-1.1 1.7-1.1 2.8 0 1.7 1.2 3.3 1.4 3.5.2.2 2.4 3.7 5.9 5 .8.3 1.5.5 2 .7.8.3 1.6.2 2.2.1.7-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3z"/><path d="M12 2A10 10 0 0 0 3.5 17.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.9.9-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  </a>
+
+  <!-- JS minificado (bundle: api + menu + scroll + script). Fontes editáveis em js/ -->
+  <script src="js/script.min.js" defer></script>
+</body>
+</html>
