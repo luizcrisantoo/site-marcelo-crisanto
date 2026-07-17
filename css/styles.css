@@ -94,6 +94,8 @@ section { padding: var(--spacing-xl) 0; }
 .btn-outline:hover { background: var(--primary-color); color: var(--text-invert); }
 .btn-whatsapp { background: var(--whatsapp-color); color: #fff; }
 .btn-whatsapp:hover { background: #0B6353; color: #fff; }
+.btn-light { background: #fff; color: var(--primary-dark); }
+.btn-light:hover { background: var(--bg-soft); color: var(--primary-dark); }
 
 /* ============================= 2. HEADER ============================= */
 .header {
@@ -338,7 +340,41 @@ section { padding: var(--spacing-xl) 0; }
 }
 .step h3 { margin-bottom: var(--spacing-sm); }
 .step p { font-size: var(--fs-small); }
+/* Links inline de contato (passos e FAQ) */
+.step p a, .faq__a a { color: var(--primary-color); text-decoration: underline; font-weight: 500; }
+.step p a:hover, .faq__a a:hover { color: var(--primary-dark); }
 .steps__cta { margin-top: var(--spacing-xl); text-align: center; }
+
+/* Convênios / planos */
+.plans { background: var(--bg-alt); }
+.plans__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md); max-width: 1040px; margin: 0 auto; list-style: none; }
+.plan-logo { background: #fff; border: 1px solid var(--border-color); border-radius: var(--border-radius); min-height: 124px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; padding: 1.1rem 1rem; text-align: center; transition: box-shadow var(--transition), transform var(--transition); }
+.plan-logo:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.plan-logo img { max-height: 46px; max-width: 82%; width: auto; object-fit: contain; }
+.plan-logo span { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 500; color: var(--text-color); line-height: 1.2; }
+.plan-logo--cta { background: var(--bg-soft); border-style: dashed; }
+.plan-logo--cta a { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--primary-dark); font-weight: 600; font-family: var(--font-heading); font-size: 0.85rem; }
+.plan-logo--cta img { max-height: 30px; }
+
+/* Convênios — tema escuro (logos em branco, estilo SOS) */
+.plans--dark { background: linear-gradient(160deg, #2E7D6B, #1F5A4C); }
+.plans--dark .section-tag { color: #fff; background: rgba(255, 255, 255, 0.15); }
+.plans--dark h2 { color: #fff; }
+.plans--dark .section-head p { color: rgba(255, 255, 255, 0.85); }
+.plans--dark .plans__note { background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.9); }
+.plans--dark .plans__note strong { color: #fff; }
+.plans--dark .plan-logo { background: transparent; border: none; min-height: 96px; gap: 0; padding: 0.75rem 1rem; }
+.plans--dark .plan-logo:hover { box-shadow: none; transform: translateY(-2px); }
+.plans--dark .plan-logo img { max-height: 48px; max-width: 82%; }
+.plans--dark .plan-logo--chip { background: #fff; border-radius: var(--border-radius); padding: 1rem 1.1rem; }
+.plans--dark .plan-logo--cta { background: rgba(255, 255, 255, 0.08); border: 1px dashed rgba(255, 255, 255, 0.45); }
+.plans--dark .plan-logo--cta a, .plans--dark .plan-logo--cta a span { color: #fff; }
+.plans--dark .plan-logo--cta img { max-height: 30px; }
+@media (min-width: 600px) { .plans__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 992px) { .plans__grid { grid-template-columns: repeat(4, 1fr); } }
+.plans__note { max-width: 720px; margin: var(--spacing-lg) auto 0; text-align: center; font-size: var(--fs-small); color: var(--text-muted); background: var(--bg-soft); border-radius: var(--border-radius); padding: var(--spacing-md); }
+.plans__cta { text-align: center; margin-top: var(--spacing-lg); }
+.plans__cta p { margin-bottom: var(--spacing-md); color: var(--text-color); font-size: 1.05rem; }
 
 /* Formação / timeline */
 .education { background: var(--bg-alt); }
@@ -469,7 +505,11 @@ section { padding: var(--spacing-xl) 0; }
   .cards-grid > * { flex-basis: calc((100% - var(--spacing-md)) / 2); }
   .integrative__pillars { grid-template-columns: repeat(2, 1fr); }
   .symptom-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer__grid { grid-template-columns: 1.4fr 1fr 1fr; }
+  .footer__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .footer__grid { grid-template-columns: 1.6fr 1fr 1fr 1.5fr; }
 }
 
 @media (min-width: 900px) {
@@ -489,12 +529,12 @@ section { padding: var(--spacing-xl) 0; }
 }
 
 /* Menu horizontal só quando há largura suficiente (evita quebra de linha) */
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .nav__toggle { display: none; }
   .nav__menu {
     position: static; inset: auto; width: auto;
     flex-direction: row; align-items: center; padding: 0;
-    transform: none; box-shadow: none; background: none; gap: 1.35rem;
+    transform: none; box-shadow: none; background: none; gap: 1.15rem;
   }
   .nav__menu a { font-size: 0.95rem; }
   .nav__menu .btn { margin-top: 0; padding: 0.7rem 1.3rem; }
