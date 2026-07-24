@@ -370,6 +370,7 @@ section { padding: var(--spacing-xl) 0; }
 .plans--dark .plan-logo--cta { background: rgba(255, 255, 255, 0.08); border: 1px dashed rgba(255, 255, 255, 0.45); }
 .plans--dark .plan-logo--cta a, .plans--dark .plan-logo--cta a span { color: #fff; }
 .plans--dark .plan-logo--cta img { max-height: 30px; }
+.plans--dark .plan-logo--big img { max-height: 66px; max-width: 90%; }
 @media (min-width: 600px) { .plans__grid { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 992px) { .plans__grid { grid-template-columns: repeat(4, 1fr); } }
 .plans__note { max-width: 720px; margin: var(--spacing-lg) auto 0; text-align: center; font-size: var(--fs-small); color: var(--text-muted); background: var(--bg-soft); border-radius: var(--border-radius); padding: var(--spacing-md); }
